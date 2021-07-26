@@ -1,0 +1,5 @@
+.vscode
+data/
+detectron2/
+.gitignore
+Readme.md
