@@ -2,6 +2,7 @@
 
 import cv2
 import os
+from tqdm import tqdm
 from utils.config import *
 from utils.text_utils import get_text_metadata
 from model_archs.models import CombinedModelMaskRCNN
@@ -114,11 +115,11 @@ def evaluate_context_with_bbox_overlap(v_data):
 if __name__ == "__main__":
     """ Main function to compute out-of-context detection accuracy"""
 
-    test_samples = read_json_data(os.path.join(DATA_DIR, 'annotations', 'test_data.json'))
+    test_samples = read_json_data(DATA_DIR / "mmsys_anns" / "public_test_mmsys_final.json")
     ours_correct = 0
     lang_correct = 0
 
-    for i, v_data in enumerate(test_samples):
+    for i, v_data in tqdm(enumerate(test_samples)):
         actual_context = int(v_data['context_label'])
         language_context = 0 if float(v_data['bert_base_score']) >= textual_sim_threshold else 1
         pred_context = evaluate_context_with_bbox_overlap(v_data)

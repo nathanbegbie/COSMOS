@@ -1,14 +1,15 @@
 """ Basic configuration and settings for training the model"""
+from pathlib import Path
 
 import torch
 from torch import nn
 import tensorflow_hub as hub
 import torchvision.transforms as transforms
 
-# Data Directories
-BASE_DIR = '/home/shivangi/Desktop/Data/Projects/cosmos/'
-DATA_DIR = '/home/shivangi/Desktop/Data/Projects/cosmos/data/'
-TARGET_DIR = "/home/shivangi/Desktop/Data/Projects/cosmos/viz/"
+# Data Directories - use relative imports
+BASE_DIR = Path(__file__).parent.parent.absolute()
+DATA_DIR = BASE_DIR / "data"
+TARGET_DIR = BASE_DIR / "viz"
 
 # Word Embeddings
 embedding_length = 300
