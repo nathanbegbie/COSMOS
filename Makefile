@@ -2,9 +2,9 @@ rm:
 	rm -rf detectron2/
 
 setup_detectron:
-	wget https://github.com/facebookresearch/detectron2/archive/refs/tags/v0.1.1.zip
-	unzip v0.1.1.zip
-	mv detectron2-0.1.1 detectron2
+	wget https://github.com/facebookresearch/detectron2/archive/refs/tags/v0.4.zip
+	unzip v0.4.zip
+	mv detectron2-0.4 detectron2
 	cp detectron2_changes/config/defaults.py detectron2/detectron2/config/defaults.py
 	cp detectron2_changes/engine/defaults.py detectron2/detectron2/engine/defaults.py
 	cp detectron2_changes/modeling/meta_arch/rcnn.py detectron2/detectron2/modeling/meta_arch/rcnn.py
