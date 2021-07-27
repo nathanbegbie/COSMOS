@@ -9,7 +9,10 @@ from utils.config import DATA_DIR, embed_type
 from utils.common_utils import read_json_data
 from nltk.stem.snowball import SnowballStemmer
 # python3 -m spacy download en
-spacy_en = spacy.load('en')
+try:
+    spacy_en = spacy.load('en')
+except IOError as e:
+    print("Spacy load failed.\nRun `python3 -m spacy download en`")
 stemmer = SnowballStemmer(language="english")
 from torchtext.vocab import GloVe, FastText
 

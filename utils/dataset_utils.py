@@ -5,8 +5,11 @@
 import torch
 from utils.config import embed_type
 import spacy
-nlp = spacy.load("en_core_web_sm")
-
+try:
+    nlp = spacy.load("en_core_web_sm")
+except IOError as e:
+    print(f"You need to download the spacy packages yourself. run: python3 -m spacy download en_core_web_sm")
+    raise
 
 def modify_caption_replace_entities(caption_text):
     """
