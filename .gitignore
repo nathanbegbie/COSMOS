@@ -12,3 +12,4 @@ dataset_visualizer/static/val/*
 dataset_visualizer/static/test/*
 detectron2/
 models_final/
+*.zip*

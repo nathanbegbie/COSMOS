@@ -3,3 +3,5 @@ data/
 detectron2/
 .gitignore
 Readme.md
+models_final/
+*.zip*
